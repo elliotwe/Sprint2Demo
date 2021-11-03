@@ -140,7 +140,7 @@ class MainActivity : AppCompatActivity() {
     fun getRes(): Double {
         val txtResult = findViewById<TextView>(R.id.txtresult)
 
-        val resStr = txtResult.text.toString()
+        var resStr = txtResult.text.toString()
 
         return resStr.toDouble()
     }
@@ -152,23 +152,29 @@ class MainActivity : AppCompatActivity() {
         if (opPressed == "/")
         {
             res /= resValue
-            txtResult.text = res.toString()
         }
         else if (opPressed == "*")
         {
             res *= resValue
-            txtResult.text = res.toString()
         }
         else if (opPressed == "+")
         {
             res += resValue
-            txtResult.text = res.toString()
         }
         else if (opPressed == "-")
         {
             res -= resValue
+        }
+
+        if (res.toInt() - res == 0.0)
+        {
+            txtResult.text = res.toInt().toString()
+        }
+        else
+        {
             txtResult.text = res.toString()
         }
+
         performOp = true
     }
 
@@ -183,7 +189,7 @@ class MainActivity : AppCompatActivity() {
         }
         else
         {
-            updateResWithOp(opPressed, resValue)
+            updateResWithOp(op, resValue)
         }
 
         op = opPressed
