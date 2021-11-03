@@ -39,19 +39,19 @@ class MainActivity : AppCompatActivity() {
         val btnZero = findViewById<Button>(R.id.btnnum0)
 
         btnAdd.setOnClickListener {
-            performOp("+")
+            performOperation("+")
         }
 
         btnSubtract.setOnClickListener {
-            performOp("-")
+            performOperation("-")
         }
 
         btnMultiply.setOnClickListener {
-            performOp("*")
+            performOperation("*")
         }
 
         btnDivide.setOnClickListener {
-            performOp("/")
+            performOperation("/")
         }
 
         btnDot.setOnClickListener {
@@ -180,7 +180,7 @@ class MainActivity : AppCompatActivity() {
         performOp = true
     }
 
-    fun performOp(opPressed:String)
+    fun performOperation(opPressed:String)
     {
         val resValue = getRes()
 
