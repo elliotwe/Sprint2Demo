@@ -208,7 +208,15 @@ class MainActivity : AppCompatActivity() {
         }
         else if (res == "0" && digit != "." || performOp)
         {
-            txtResult.text = digit
+            if (digit == ".")
+            {
+                txtResult.text = "0."
+            }
+            else
+            {
+                txtResult.text = digit
+            }
+
             performOp = false
         }
         else
